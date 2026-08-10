@@ -3,11 +3,12 @@ class Solution {
         int n = nums1.length;
         int m = nums2.length;
         ArrayList<Integer> ans = new ArrayList<>();
+        boolean used[]=new boolean[m];
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
-                if (nums1[i] == nums2[j]) {
+                if (nums1[i] == nums2[j]&&!used[j]) {
                     ans.add(nums1[i]);
-                    nums2[j] = -1;
+                    used[j] = true;
                     break;
                 }
             }
