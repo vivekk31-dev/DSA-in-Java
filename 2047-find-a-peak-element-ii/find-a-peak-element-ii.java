@@ -1,5 +1,5 @@
 class Solution {
-    public int maxElement(int[][] mat, int col) {
+    public int maxRowIndex(int mat[][], int col) {
         int n = mat.length;
         int max = Integer.MIN_VALUE;
         int index = -1;
@@ -15,19 +15,18 @@ class Solution {
     public int[] findPeakGrid(int[][] mat) {
         int n = mat.length;
         int m = mat[0].length;
-
         int low = 0;
         int high = m - 1;
         while (low <= high) {
-            int mid = (low + high) / 2;
-            int row = maxElement(mat, mid);
+            int mid = low + (high - low) / 2;
+            int row = maxRowIndex(mat, mid);
             int left = -1;
             int right = -1;
             if (mid - 1 >= 0) {
-                left = mat[row][mid - 1];
+                left = mat[row][mid-1];
             }
             if (mid + 1 < m) {
-                right = mat[row][mid + 1];
+                right = mat[row][mid+1];
             }
             if (mat[row][mid] > left && mat[row][mid] > right) {
                 return new int[] { row, mid };
