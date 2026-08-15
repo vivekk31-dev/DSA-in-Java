@@ -21,8 +21,14 @@ class Solution {
         while (low <= high) {
             int mid = (low + high) / 2;
             int row = maxElement(mat, mid);
-            int left = mid - 1 >= 0 ? mat[row][mid - 1] : Integer.MIN_VALUE;
-            int right = mid + 1 < m ? mat[row][mid + 1] : Integer.MIN_VALUE;
+            int left = -1;
+            int right = -1;
+            if (mid - 1 >= 0) {
+                left = mat[row][mid - 1];
+            }
+            if (mid + 1 < m) {
+                right = mat[row][mid + 1];
+            }
             if (mat[row][mid] > left && mat[row][mid] > right) {
                 return new int[] { row, mid };
             } else if (left > mat[row][mid]) {
