@@ -13,7 +13,9 @@ class Solution {
                 l++;
 
             }
-            maxLength = Math.max(maxLength, r - l + 1);
+            if (map.size() <= 2) {
+                maxLength = Math.max(maxLength, r - l + 1);
+            }
             r++;
         }
         return maxLength;
