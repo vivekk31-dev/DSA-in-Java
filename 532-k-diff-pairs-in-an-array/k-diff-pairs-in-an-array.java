@@ -13,8 +13,9 @@ class Solution {
             } else {
                 count++;
                 l++;
-                while (l < n && nums[l] == nums[l - 1])
+                while (l < n && nums[l] == nums[l - 1]) {
                     l++;
+                }
                 r = Math.max(r, l + 1);
             }
         }
