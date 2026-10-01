@@ -16,9 +16,9 @@ class Solution {
 
     public List<String> letterCombinations(String digits) {
         List<String> ans = new ArrayList<>();
-        // if (digits.length() == 0) {
-        //     return ans;
-        // }
+        if (digits.length() == 0) {
+            return ans;
+        }
         String[] map = {
                 "", "", "abc", "def", "ghi",
                 "jkl", "mno", "pqrs", "tuv", "wxyz"
